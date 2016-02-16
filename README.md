@@ -1,73 +1,62 @@
-# The jQuery Plugin of message
+# The jQuery Plugin of layer
 
-Simple plugin for displaying custom message boxes to the user. [homepage & demo](http://kyo4311.github.io/jquery.message/)
 
 # Getting Started
 Add the stylesheet, jquery and jquery.message plugin in you web page.
 ```html
-<link rel="stylesheet" href="jquery.message.css" />
+<link rel="stylesheet" href="jquery.laery.min.css" />
 <script src="jquery.js"></script>
-<script src="jquery.message.min.js"></script>
+<script src="jquery.laery.min.js"></script>
 ```
 
-# Usage
+# tip
 ```js
-uw.message({
-    title: 'Title',
-    content: 'content',
-    position: 'topright', // topright|lowerleft|lowerright
-    color: color, // green|blue|red|yellow|black
+$.layer.tip('tip a message!');
+```
+
+# alert
+```js
+$.layer.alert('弹出层');
+```
+
+# confirm
+```js
+$.layer.confirm('请确认操作？', function(){
+    alert('已经确认');
+});
+```
+# iframe
+```js
+$.layer.iframe({
+    title : 'My Blog',
+    url : 'http://www.f00sun.com',
+    width : '70%',
+    height : '80%'
 });
 ```
 
-# Options
-<table>
-    <tr>
-        <td>title</td>
-        <td>the message title, it can is empty.</td>
-    </tr>
-    <tr>
-        <td>content</td>
-        <td>the message content, It is best not to be empty.</td>
-    </tr>
-    <tr>
-        <td>position</td>
-        <td>topright | lowerleft | lowerright, lowerright is default.</td>
-    </tr>
-    <tr>
-        <td>color</td>
-        <td>green | blue | red | yellow | black, black id default.</td>
-    </tr>
-</table>
+# box
+```js
+$.layer.box({
+    title : '自定义弹窗',
+    // width:'600px',
+    // height: '400px',
+    content : '<div>name: <input name="abc"><br/><br/>age: <input name="age"></div>',
+    btns : ['确定', '关闭'],
+    callback:function(listen){
+        listen('关闭', function(close, serialize){
+            close();
+        });
 
-
-# Snippet for sublime Text 3
-step1 : tools -> New Snippet    
-step2 : copy code to file
-```xml
-<?xml version="1.0"?>
-<snippet>
-  <content><![CDATA[
-/*
- * http://kyo4311.github.io/jquery.message/
- */
-\$.message({
-    title: '${1}',
-    content: '${2}',
-    ${3://}position: '${4:lowerright}', // topright|lowerleft|lowerright
-    ${5://}color: '${6:black}' // green|blue|red|yellow|black
+        listen('确定', function(close, serialize){
+            alert(serialize);
+            close();
+        });
+    }
 });
-  ]]></content>
-  <tabTrigger>jQuery.message</tabTrigger>
-  <scope>source.js</scope>
-  <description>jquery.message by guosheng</description>
-</snippet>
 ```
-step3 : save as 'jQuery.message.sublime-snippet'   
 
-step4 : restart sublime text
 
-step5 : input in js documentation: 'jqms' then press the TAB key
 
 # License
 Copyright (c) 2015 guosheng 

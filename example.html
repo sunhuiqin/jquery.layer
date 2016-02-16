@@ -16,17 +16,17 @@
 <body>
     
     <div style="padding: 150px; text-align: center;">
-        <p><button id="show_tip">tip框</button></p>
-        <p><button id="show_alert">alert框</button></p>
-        <p><button id="show_confirm">确认框</button></p>
+        <p><button id="show_tip">tip</button></p>
+        <p><button id="show_alert">alert</button></p>
+        <p><button id="show_confirm">confirm</button></p>
         <p><button id="show_iframe">iframe</button></p>
-        <p><button id="show_box">自定义div</button></p>
+        <p><button id="show_box">box</button></p>
     </div>
 
 
     <script type="text/javascript">
         $('#show_tip').on('click', function(){
-             $.layer.tip('这是一个消息');
+            $.layer.tip('tip a message!');
         });
 
         $('#show_alert').on('click', function(){
