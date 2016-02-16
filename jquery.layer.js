@@ -174,7 +174,6 @@
             box: __box,
             confirm: __confirm,
             alert: __alert,
-            // form: form,
             iframe: __iframe
         }
     });

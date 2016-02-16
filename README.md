@@ -2,11 +2,11 @@
 
 
 # Getting Started
-Add the stylesheet, jquery and jquery.message plugin in you web page.
+Add the stylesheet, jquery and jquery.layer plugin in you web page.
 ```html
-<link rel="stylesheet" href="jquery.laery.min.css" />
+<link rel="stylesheet" href="jquery.layer.min.css" />
 <script src="jquery.js"></script>
-<script src="jquery.laery.min.js"></script>
+<script src="jquery.layer.min.js"></script>
 ```
 
 # tip
@@ -57,7 +57,6 @@ $.layer.box({
 ```
 
 
-
 # License
-Copyright (c) 2015 guosheng 
+Copyright (c) 2016 guosheng 
 Licensed under the [MIT License](https://github.com/umdjs/umd/blob/master/LICENSE.md).
