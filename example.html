@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jquery.layer demo</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="jquery.layer.css" rel="stylesheet">
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.layer.js"></script>
+<style type="text/css">
+    button{width: 100px;height: 40px;line-height: 40px;}
+</style>
+</head>
+<body>
+    
+    <div style="padding: 150px; text-align: center;">
+        <p><button id="show_tip">tip框</button></p>
+        <p><button id="show_alert">alert框</button></p>
+        <p><button id="show_confirm">确认框</button></p>
+        <p><button id="show_iframe">iframe</button></p>
+        <p><button id="show_box">自定义div</button></p>
+    </div>
+
+
+    <script type="text/javascript">
+        $('#show_tip').on('click', function(){
+             $.layer.tip('这是一个消息');
+        });
+
+        $('#show_alert').on('click', function(){
+            $.layer.alert('弹出层');
+        });
+
+        $('#show_confirm').on('click', function(){
+            $.layer.confirm('请确认操作？', function(){
+                alert('已经确认');
+            });
+        });
+
+        $('#show_box').on('click', function(){
+            $.layer.box({
+                title : '自定义弹窗',
+                // width:'600px',
+                content : '<div>name: <input name="abc"><br/><br/>age: <input name="age"></div>',
+                btns : ['确定', '关闭'],
+                callback:function(listen){
+                    listen('关闭', function(close, serialize){
+                        close();
+                    });
+
+                    listen('确定', function(close, serialize){
+                        alert(serialize);
+                        close();
+                    });
+                }
+            });
+        });
+
+
+        $('#show_iframe').on('click', function(){
+            $.layer.iframe({
+                title : 'My Blog',
+                url : 'http://www.f00sun.com',
+                width : '70%',
+                height : '80%'
+            });
+        });
+
+      
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+    "name": "jquery.message",
+    "version": "1.0.0",
+    "description": "The jQuery Plugin of message",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kyo4311/jquery.message.git"
+    },
+    "author": "guosheng",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kyo4311/jquery.message/issues"
+    },
+    "homepage": "https://github.com/kyo4311/jquery.message",
+    "dependencies": {
+        "gulp": "^3.9.0",
+        "gulp-jshint": "^2.0.0",
+        "gulp-rename": "1.2.2",
+        "gulp-cssmin": "0.1.7",
+        "gulp-uglify": "^1.5.1"
+    },
+    "private": true
+}
